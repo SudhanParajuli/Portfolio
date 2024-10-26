@@ -968,7 +968,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/js/materialize.min.js"></script>
   <script>
     // Materialize - Initializers
-    $(document).ready(function () {
+$(document).ready(function () {
       $(".scrollspy").scrollSpy()
       // Initialize collapse button
       $(".button-collapse").sideNav({
@@ -978,7 +978,7 @@
       })
     })
 
-    document.addEventListener('keydown', function (e) {
+document.addEventListener('keydown', function (e) {
       // Disable F12
       if (e.key === 'F12' || e.keyCode === 123) {
           e.preventDefault();
@@ -986,12 +986,12 @@
   });
   
      // Disable right-click
-  document.addEventListener('contextmenu', function (e) {
+document.addEventListener('contextmenu', function (e) {
       e.preventDefault();
   });
   
   // Disable Ctrl+U, Ctrl+C, and Ctrl+V
-  document.addEventListener('keydown', function (e) {
+document.addEventListener('keydown', function (e) {
       // Disable Ctrl+U
       if (e.ctrlKey && e.key === 'u') {
           e.preventDefault();
