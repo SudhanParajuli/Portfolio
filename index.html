@@ -978,6 +978,60 @@
       })
     })
   </script>
+  <script>
+    document.addEventListener('keydown', function (e) {
+        // Disable F12
+        if (e.key === 'F12' || e.keyCode === 123) {
+            e.preventDefault();
+        }
+    });
+    
+       // Disable right-click
+    document.addEventListener('contextmenu', function (e) {
+        e.preventDefault();
+    });
+    
+    // Disable Ctrl+U, Ctrl+C, and Ctrl+V
+    document.addEventListener('keydown', function (e) {
+        // Disable Ctrl+U
+        if (e.ctrlKey && e.key === 'u') {
+            e.preventDefault();
+        }
+    
+        // Disable Ctrl+C
+        if (e.ctrlKey && e.key === 'c') {
+            e.preventDefault();
+        }
+    
+        // Disable Ctrl+V
+        if (e.ctrlKey && e.key === 'v') {
+            e.preventDefault();
+        }
+    });
+    function disableImgDragging() {
+      var images = document.getElementsByTagName("img");
+      for(var i = 0 ; i < images.length ; i++) {
+        images[i].classList.add('no-drag');
+        images[i].setAttribute('no-drag', 'on');
+        images[i].setAttribute('draggable', 'false');
+        images[i].addEventListener('dragstart', function( event ) {
+          event.preventDefault();
+        }, false);	
+      }
+    }
+    disableImgDragging();
+    </script>
+    <style>
+    img,
+    .no-drag {
+      -webkit-user-drag: none;
+      user-drag: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+    </style>
 </body>
 
 </html>
